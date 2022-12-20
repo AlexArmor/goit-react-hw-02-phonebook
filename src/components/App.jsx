@@ -17,6 +17,13 @@ export class App extends Component {
   };
 
   onFormSubmit = text => {
+    const isAtList = this.state.contacts.find(
+      contact => contact.name === text.name
+    );
+    if (isAtList) {
+      alert(`${text.name} is already in contacts`);
+      return;
+    }
     const contact = {
       ...text,
       id: nanoid(),
