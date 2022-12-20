@@ -19,6 +19,11 @@ export class App extends Component {
     }));
   };
 
+  handleFilterChange = () => {
+    const { contacts, filter } = this.state;
+    return contacts.filter(contact => contact.name.includes(filter));
+  };
+
   render() {
     const { contacts } = this.state;
     return (
@@ -29,6 +34,8 @@ export class App extends Component {
         </div>
         <div>
           <h2>Contacts</h2>
+          <h3>Find contacts by name</h3>
+          <input type="text" onChange={this.handleFilterChange} />
           <ul>
             {contacts.map(contact => {
               return (
