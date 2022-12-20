@@ -1,3 +1,8 @@
 export const Filter = ({ onInputChange }) => {
-  return <input type="text" onChange={e => onInputChange(e.target.value)} />;
+  return (
+    <>
+      <h3>Find contacts by name</h3>
+      <input type="text" onChange={e => onInputChange(e.target.value)} />
+    </>
+  );
 };
