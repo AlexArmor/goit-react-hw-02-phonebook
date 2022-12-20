@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Item } from './ContactList.styled';
 import { BtnDeleteItem } from './ContactList.styled';
 
@@ -16,4 +17,15 @@ export const ContactList = ({ data, deleteContact }) => {
       })}
     </ul>
   );
+};
+
+ContactList.propTypes = {
+  deleteContact: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(
+    PropTypes.exact({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ),
 };
