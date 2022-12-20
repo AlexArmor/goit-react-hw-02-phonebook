@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import { Filter } from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 import { Section } from './App.styled';
-import { GlobalStyleComponent } from '../styles/GlobalStyles';
 
 export class App extends Component {
   state = {
@@ -52,7 +51,6 @@ export class App extends Component {
   };
 
   render() {
-    const { contacts } = this.state;
     const filteredContacts = this.filteredContacts();
     return (
       <Section>
