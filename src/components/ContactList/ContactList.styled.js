@@ -13,4 +13,7 @@ cursor: pointer;
 &:hover{
     background-color: orange;
 }
+&:focus{
+    background-color: #ff4800;
+}
 `;
